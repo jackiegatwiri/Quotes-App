@@ -2,7 +2,10 @@
 <hr>
 <ol>
   <div *ngFor= 'let quote of quotes'>
-    <li> <p>{{"Author: " + quote.name}}</p>  <p>{{"Publisher: " + quote.publisher}}</p></li>
-    <app-quotes-desription [quote]='quote'></app-quotes-desription>
+    <li> <p>{{"Author: " + quote.name}}</p>  <p>{{"Publisher: " + quote.publisher}}</p>
+    <p>Upvote: {{quote.upvote}}</p> <p>Downvote: {{quote.downvote}}</p></li>
+    <app-quotes-desription [quote]='quote'></app-quotes-desription>  
+    <p><button class="btn btn-success" (click)='upvotes()'>Upvote</button> </p>
+    <button class="btn btn-info" (click)='downvotes()'>Downvote</button>
   </div>
   </ol>
