@@ -1,0 +1,8 @@
+<h1>Enter your quotes here</h1>
+<hr>
+<ol>
+  <div *ngFor= 'let quote of quotes'>
+    <li> <p>{{"Author: " + quote.name}}</p>  <p>{{"Publisher: " + quote.publisher}}</p></li>
+    <app-quotes-desription [quote]='quote'></app-quotes-desription>
+  </div>
+  </ol>
