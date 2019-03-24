@@ -1,11 +1,17 @@
 <h1>Enter your quotes here</h1>
 <hr>
+
+<app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+
+
 <ol>
   <div *ngFor= 'let quote of quotes;let i=index'>
-    <li> <p>{{"Author: " + quote.name}}</p>  <p>{{"Publisher: " + quote.publisher}}</p>
-    <p>Upvote: {{quote.upvote}}</p> <p>Downvote: {{quote.downvote}}</p></li>
-    <app-quotes-desription [quote]='quote'></app-quotes-desription>  
+    <li> <b>{{ quote.description}}</b> <p>{{"Author: " + quote.author}}</p>  <p>{{"Publisher: " + quote.publisher}}</p> 
+    <p>Upvote: {{quote.upvote}}</p> <p>Downvote: {{quote.downvote}}</p> <p>{{"Duration passed: " + quote.startDate|date}}</p></li>
+    <p><app-quotes-desription (isDelete) = 'deleteQuote($event, i)' [quote]='quote'></app-quotes-desription></p> 
     <p><button class="btn btn-success" (click)='upvotes(i)'>Upvote</button> </p>
     <button class="btn btn-info" (click)='downvotes(i)'>Downvote</button>
   </div>
   </ol>
+  
+
