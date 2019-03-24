@@ -20,14 +20,14 @@ export class QuotesComponent implements OnInit {
 
   ngOnInit() {
   }
-  public upvote:number = 0;
-  public downvote:number = 0;
-  upvotes(){
-    return this.upvote ++;
+  
+  
+  upvotes(index){
+     this.quotes[index].upvote++;
 
   }
-  downvotes(){
-    return this.downvote ++;
+  downvotes(index){
+    this.quotes[index].downvote++;
   }
 
 }

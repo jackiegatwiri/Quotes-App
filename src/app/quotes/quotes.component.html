@@ -1,11 +1,11 @@
 <h1>Enter your quotes here</h1>
 <hr>
 <ol>
-  <div *ngFor= 'let quote of quotes'>
+  <div *ngFor= 'let quote of quotes;let i=index'>
     <li> <p>{{"Author: " + quote.name}}</p>  <p>{{"Publisher: " + quote.publisher}}</p>
     <p>Upvote: {{quote.upvote}}</p> <p>Downvote: {{quote.downvote}}</p></li>
     <app-quotes-desription [quote]='quote'></app-quotes-desription>  
-    <p><button class="btn btn-success" (click)='upvotes()'>Upvote</button> </p>
-    <button class="btn btn-info" (click)='downvotes()'>Downvote</button>
+    <p><button class="btn btn-success" (click)='upvotes(i)'>Upvote</button> </p>
+    <button class="btn btn-info" (click)='downvotes(i)'>Downvote</button>
   </div>
   </ol>

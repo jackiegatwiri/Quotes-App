@@ -1,3 +1,8 @@
 export class Quotes {
-    constructor(public id:number, public description:string, public name:string, public publisher:string){}
+    // public upvote:number;
+    // public downvote:number;
+    constructor(public id:number, public description:string, public name:string, public publisher:string){
+        this.upvote=0
+        this.downvote=0
+    }
 }
