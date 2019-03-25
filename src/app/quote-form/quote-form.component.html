@@ -14,7 +14,7 @@
 
                 <label for="author"><strong>Author's Name: </strong></label>
                 <input  type="text" class="form-control" id="author" placeholder="Authors's Name" [(ngModel)]="newQuote.author" name="author" #author="ngModel" required>
-                <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+                <!-- <div [hidden]="author.valid || author.pristine" class="alert alert-danger"> -->
                     <p> Author's Name is Required</p>
             </div>
         </div>
@@ -22,7 +22,7 @@
 
                 <label for="publisher"><strong>Publisher's Name: </strong></label>
                 <input type="text" class="form-control" id="publisher" placeholder="Publisher's Name" [(ngModel)]="newQuote.publisher" name="publisher" #publisher="ngModel" required>
-                <div [hidden]="publisher.valid || publisher.pristine" class="alert alert-danger">
+                <!-- <div [hidden]="publisher.valid || publisher.pristine" class="alert alert-danger"> -->
                     <p> Publisher's Name is Required</p>
             </div>
         </div>
@@ -30,7 +30,7 @@
 
                 <label for="start"><strong> Starting Date: </strong></label> <br>
                 <input type='date' id="start" [(ngModel)]="newQuote.startDate" name="startDate" #startDate="ngModel" required >
-                <div [hidden]="startDate.valid || startDate.pristine" class="alert alert-danger">
+                <!-- <div [hidden]="startDate.valid || startDate.pristine" class="alert alert-danger"> -->
                     <p>Start date is Required</p>
                 </div>
             </div>
