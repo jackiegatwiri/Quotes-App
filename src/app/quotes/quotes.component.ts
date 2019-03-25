@@ -10,7 +10,7 @@ export class QuotesComponent implements OnInit {
   quotes =[ 
     new Quotes(1, "Failure will never overtake me if my determination to succeed is strong enough","Og mandino", "ACL", new Date(2019,3,24)),
     new Quotes(2, "With the new day comes new strenth and new thoughts.","Eleaner Roosevelt", "TLC",new Date(2019,3,24)),
-    new Quotes(3, "Change your life today. Don't gamble on the future, act now, without delay.", "Simone de Beauior", "Disney", new Date(2019,3,24)),
+    // new Quotes(3, "Change your life today. Don't gamble on the future, act now, without delay.", "Simone de Beauior", "Disney", new Date(2019,3,24)),
     // new Quotes(4, "Optisim is the faith that leads to achievement. Nothing can be done without hope and confidence.", "Hellen Keller", "HellenTT", new Date(2019,3,24)),
     // new Quotes(5, "Good, better, best. Never let it rest. 'Til your good is better and your better is best.", "St. Jerome", "Brainy", new Date(2019,3,24))
 ]
