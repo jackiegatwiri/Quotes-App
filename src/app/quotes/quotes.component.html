@@ -8,8 +8,9 @@
 
 <ol>
   <div *ngFor= 'let quote of quotes;let i=index'>
-    <li> <b>{{ quote.description}}</b> <p>{{"Author: " + quote.author}}</p>  <p>{{"Publisher: " + quote.publisher}}</p> 
-    <p>Upvote: {{quote.upvote}}</p> <p>Downvote: {{quote.downvote}}</p> <p>{{"Duration passed: " + quote.startDate|date}}</p></li>
+    <li appHighlight> <b>{{ quote.description}}</b></li>
+    <p>{{"Author: " + quote.author}}</p>  <p>{{"Publisher: " + quote.publisher}}</p> 
+    <p>Upvote: {{quote.upvote}}</p> <p>Downvote: {{quote.downvote}}</p> <p>{{"Duration passed: " + quote.startDate|date}}</p>
     <p><app-quotes-desription (isDelete) = 'deleteQuote($event, i)' [quote]='quote'></app-quotes-desription></p> 
     <p><button class="btn btn-success" (click)='upvotes(i)'>Upvote</button> </p>
     <button style="margin-bottom: 4%"class="btn btn-info" (click)='downvotes(i)'>Downvote</button>
