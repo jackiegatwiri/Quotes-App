@@ -4,7 +4,7 @@
             <div class="form-group">
 
                 <label for="description"><strong>Quotes: </strong></label>
-                <textarea class="form-control" id="description" rows="4" placeholder="Enter Quote" [(ngModel)]="newQuote.description" name="description" #description="ngModel" required></textarea>
+                <textarea style="width:550%; margin-left: 8%; border-color: rgb(86, 150, 27)" class="form-control" id="description" rows="4" placeholder="Enter Quote" [(ngModel)]="newQuote.description" name="description" #description="ngModel" required ></textarea>
                 <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
                     <p> Quote is Required</p>
 
@@ -13,7 +13,7 @@
             <div class="form-group">
 
                 <label for="author"><strong>Author's Name: </strong></label>
-                <input type="text" class="form-control" id="author" placeholder="Authors's Name" [(ngModel)]="newQuote.author" name="author" #author="ngModel" required>
+                <input style="width:550%; margin-left:8%" type="text" class="form-control" id="author" placeholder="Authors's Name" [(ngModel)]="newQuote.author" name="author" #author="ngModel" required>
                 <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
                     <p> Author's Name is Required</p>
             </div>
@@ -21,20 +21,20 @@
             <div class="form-group">
 
                 <label for="publisher"><strong>Publisher's Name: </strong></label>
-                <input type="text" class="form-control" id="publisher" placeholder="Publisher's Name" [(ngModel)]="newQuote.publisher" name="publisher" #publisher="ngModel" required>
+                <input style="width:550%;margin-left:8%" type="text" class="form-control" id="publisher" placeholder="Publisher's Name" [(ngModel)]="newQuote.publisher" name="publisher" #publisher="ngModel" required>
                 <div [hidden]="publisher.valid || publisher.pristine" class="alert alert-danger">
                     <p> Publisher's Name is Required</p>
             </div>
         </div>
             <div class="form-group">
 
-                <label for="start"><strong>Starting Date: </strong></label> <br>
-                <input type='date' id="start" [(ngModel)]="newQuote.startDate" name="startDate" #startDate="ngModel" required >
+                <label for="start"><strong> Starting Date: </strong></label> <br>
+                <input style="width:550%; margin-left:8%" type='date' id="start" [(ngModel)]="newQuote.startDate" name="startDate" #startDate="ngModel" required >
                 <div [hidden]="startDate.valid || startDate.pristine" class="alert alert-danger">
                     <p>Start date is Required</p>
                 </div>
             </div>
-            <button type="Submit" class="btn btn-success btn-lg">Add Quote</button>
+            <button style="margin-top: 4%; margin-bottom: 4%;" type="Submit" class="btn btn-success btn-lg">Add Quote</button>
         </form>
     </div>
 </div>
