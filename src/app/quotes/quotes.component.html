@@ -8,7 +8,7 @@
       <p>{{"Publisher: " + quote.publisher}}</p>
       <p>Upvote: {{quote.upvote}}</p>
       <p>Downvote: {{quote.downvote}}</p>
-      <p>{{"Duration passed: " + quote.startDate|date}}</p>
+      <!-- <p>{{"Duration passed: " + quote.startDate|date}}</p> -->
       <p>
         <app-quotes-desription (isDelete)='deleteQuote($event, i)' [quote]='quote'></app-quotes-desription>
       </p>
