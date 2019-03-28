@@ -30,6 +30,9 @@ addNewQuote(quote){
 
   ngOnInit() {
   }
+  toogleDetails(index){
+    this.quotes[index].showDescription = !this.quotes[index].showDescription;
+}
   
   highUpvote(){
 this.store=0
@@ -53,6 +56,7 @@ return this.store;
   }
 deleteQuote(isDelete, index){
 if(isDelete){
+  let toDelete=confirm(`Are you sure you want to delete ${this.quotes[index].description}`)
   this.quotes.splice(index,1);
 }
 }

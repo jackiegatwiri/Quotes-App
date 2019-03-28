@@ -29,14 +29,7 @@
           <p> Publisher's Name is Required</p>
         </div>
       </div>
-      <div class="form-group">
 
-        <label for="start"><strong> Starting Date: </strong></label> <br>
-        <input type='date' id="start" [(ngModel)]="newQuote.startDate" name="startDate" #startDate="ngModel" required>
-        <div [hidden]="startDate.valid || startDate.pristine" class="alert alert-danger">
-          <p>Start date is Required</p>
-        </div>
-      </div>
       <button type="Submit" class="btn btn-success btn-lg" style="margin-bottom: 6%">Add Quote</button>
     </form>
   </div>

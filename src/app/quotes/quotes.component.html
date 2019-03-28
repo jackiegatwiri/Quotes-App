@@ -1,21 +1,68 @@
 <div class='container-fluid'>
-  <h1 style="text-align:center; color:palevioletred; font-style: italic; margin-top: 4%">QUOTES</h1>
-  <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
-  <ol>
-    <div *ngFor='let quote of quotes;let i=index'>
-      <li appHighlight> <b>{{ quote.description}}</b></li>
-      <p>{{"Author: " + quote.author}}</p>
-      <p>{{"Publisher: " + quote.publisher}}</p>
-      <p>Upvote: {{quote.upvote}}</p>
-      <p>Downvote: {{quote.downvote}}</p>
-      <p>{{"Date: " + quote.startDate | date}}</p>
-      <p appHighlight *ngIf="highUpvote() === quote.upvote && quote.upvote > 0">{{quote.quote}}</p>
-      <p *ngIf="highUpvote()!== quote.upvote || quote.upvote === 0">{{quote.quote}}</p>
-      <p>
-        <app-quotes-desription (isDelete)='deleteQuote($event, i)' [quote]='quote'></app-quotes-desription>
-      </p>
-      <p><button class="btn btn-success" (click)='upvotes(i)'>Upvote</button> </p>
-      <button style="margin-bottom: 4%" class="btn btn-info" (click)='downvotes(i)'>Downvote</button>
+  <div class="bdgImg">
+    <nav class="navbar navbar-expand-sm ">
+      <span class="navbar-text">
+        Quotes App
+      </span>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#input">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#work">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#quotes">Quotes</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="content">
+      <h1>WELCOME TO THE QUOTES APP</h1>
+      <P>A free App that let's you post your quotes</P>
     </div>
-  </ol>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form">
+        <h3 id="input">Input your Quotes Here</h3>
+        <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="works">
+        <h3 id="work">How it Works</h3>
+        <ul>
+          <li>A user creates a new quote</li>
+          <li>Other users upvote or downvote the quote</li>
+          <li>A user can delete a quote</li>
+          <li>Users can see the number of upvotes and number of downvotes for each quote.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="list">
+    <h3 id="quotes">Quotes by other users:</h3>
+    <ol>
+      <div *ngFor='let quote of quotes;let i=index'>
+
+        <p appHighlight *ngIf="highUpvote() === quote.upvote && quote.upvote > 0">{{quote.description}}</p>
+          <p *ngIf="highUpvote()!== quote.upvote || quote.upvote === 0">{{quote.description}}</p>
+        <button id="btn" class="btn btn-info" (click)='toogleDetails(i)'>Show More</button>
+        <div *ngIf="quote.showDescription">
+          <p>{{"Author: " + quote.author}}</p>
+          <p>{{"Publisher: " + quote.publisher}}</p>
+          <p>Upvote: {{quote.upvote}}</p>
+          <p>Downvote: {{quote.downvote}}</p>
+          <p><app-quotes-desription (isDelete)='deleteQuote($event, i)' [quote]='quote'></app-quotes-desription></p>
+          <p><button class="btn btn-success" (click)='upvotes(i)'>Upvote</button> </p>
+          <button style="margin-bottom: 4%" class="btn btn-info" (click)='downvotes(i)'>Downvote</button>
+        </div>
+      </div>
+    </ol>
+  </div>
 </div>
